@@ -7,17 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		012BA2D5211902830046900D /* VisionLive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012BA2D4211902830046900D /* VisionLive.swift */; };
+		0197E662210D5BCF00A4C6F3 /* Tech.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0197E661210D5BCF00A4C6F3 /* Tech.mlmodel */; };
 		0199D7D5210053AB00596DB8 /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0199D7D4210053AB00596DB8 /* Resnet50.mlmodel */; };
 		01B10FC920FEFEA30023D71A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B10FC820FEFEA30023D71A /* AppDelegate.swift */; };
 		01B10FCB20FEFEA30023D71A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B10FCA20FEFEA30023D71A /* ViewController.swift */; };
 		01B10FCE20FEFEA30023D71A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01B10FCC20FEFEA30023D71A /* Main.storyboard */; };
 		01B10FD020FEFEA40023D71A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01B10FCF20FEFEA40023D71A /* Assets.xcassets */; };
 		01B10FD320FEFEA40023D71A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01B10FD120FEFEA40023D71A /* LaunchScreen.storyboard */; };
-		01B10FDB20FF04240023D71A /* Fruits.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 01B10FDA20FF04240023D71A /* Fruits.mlmodel */; };
-		01C1A0DD2106C02D001D90BD /* Tech.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 01C1A0DC2106C02D001D90BD /* Tech.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		012BA2D4211902830046900D /* VisionLive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionLive.swift; sourceTree = "<group>"; };
+		0197E661210D5BCF00A4C6F3 /* Tech.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Tech.mlmodel; sourceTree = "<group>"; };
 		0199D7D4210053AB00596DB8 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
 		01B10FC520FEFEA30023D71A /* VisionLive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VisionLive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01B10FC820FEFEA30023D71A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -26,8 +28,6 @@
 		01B10FCF20FEFEA40023D71A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		01B10FD220FEFEA40023D71A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		01B10FD420FEFEA40023D71A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		01B10FDA20FF04240023D71A /* Fruits.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Fruits.mlmodel; sourceTree = "<group>"; };
-		01C1A0DC2106C02D001D90BD /* Tech.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Tech.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,10 +61,10 @@
 			isa = PBXGroup;
 			children = (
 				01B10FC820FEFEA30023D71A /* AppDelegate.swift */,
-				01C1A0DC2106C02D001D90BD /* Tech.mlmodel */,
-				01B10FDA20FF04240023D71A /* Fruits.mlmodel */,
 				0199D7D4210053AB00596DB8 /* Resnet50.mlmodel */,
+				0197E661210D5BCF00A4C6F3 /* Tech.mlmodel */,
 				01B10FCA20FEFEA30023D71A /* ViewController.swift */,
+				012BA2D4211902830046900D /* VisionLive.swift */,
 				01B10FCC20FEFEA30023D71A /* Main.storyboard */,
 				01B10FCF20FEFEA40023D71A /* Assets.xcassets */,
 				01B10FD120FEFEA40023D71A /* LaunchScreen.storyboard */,
@@ -144,11 +144,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0197E662210D5BCF00A4C6F3 /* Tech.mlmodel in Sources */,
 				01B10FCB20FEFEA30023D71A /* ViewController.swift in Sources */,
-				01C1A0DD2106C02D001D90BD /* Tech.mlmodel in Sources */,
 				01B10FC920FEFEA30023D71A /* AppDelegate.swift in Sources */,
 				0199D7D5210053AB00596DB8 /* Resnet50.mlmodel in Sources */,
-				01B10FDB20FF04240023D71A /* Fruits.mlmodel in Sources */,
+				012BA2D5211902830046900D /* VisionLive.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
