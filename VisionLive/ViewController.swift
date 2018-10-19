@@ -7,24 +7,31 @@
 //
 
 import UIKit
-import AVKit
-import Vision
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, LiveVisionDelegate {
     
-    let techModel = Tech().model
     let resnetModel = Resnet50().model
-    let p_layer = AVCaptureVideoPreviewLayer()
-    var visionLive: VisionLive!
     
-    @IBOutlet var results_label: UILabel!
+    var liveVision: LiveVision!
+    var liveVisionView: LiveVisionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        visionLive = VisionLive(with: self, model: Tech().model, previewLayer: p_layer, resultsLabel: results_label)
-        visionLive.setup_camera()
+        self.liveVisionView = LiveVisionView(frame: self.view.frame)
         
+        self.liveVision = LiveVision(model: self.resnetModel)
+        self.liveVision.delegate = self
+        
+        let previewLayer = self.liveVision.previewLayer(frame: self.view.layer.bounds)
+        self.liveVisionView.layer.addSublayer(previewLayer)
+        self.liveVision.startCamera()
+        
+        self.view.addSubview(self.liveVisionView)
+    }
+    
+    func getPrediction(prediction: String, confidenceLevel: Double) {
+        self.liveVisionView.display(text: "\(prediction), \(confidenceLevel)")
     }
 }
 

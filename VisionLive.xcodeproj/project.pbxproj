@@ -7,24 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		012BA2D5211902830046900D /* VisionLive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012BA2D4211902830046900D /* VisionLive.swift */; };
-		0197E662210D5BCF00A4C6F3 /* Tech.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0197E661210D5BCF00A4C6F3 /* Tech.mlmodel */; };
+		012357B5217A5CBB00244A5F /* LiveVisionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012357B4217A5CBB00244A5F /* LiveVisionView.swift */; };
+		012BA2D5211902830046900D /* LiveVision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012BA2D4211902830046900D /* LiveVision.swift */; };
 		0199D7D5210053AB00596DB8 /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0199D7D4210053AB00596DB8 /* Resnet50.mlmodel */; };
 		01B10FC920FEFEA30023D71A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B10FC820FEFEA30023D71A /* AppDelegate.swift */; };
 		01B10FCB20FEFEA30023D71A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B10FCA20FEFEA30023D71A /* ViewController.swift */; };
-		01B10FCE20FEFEA30023D71A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01B10FCC20FEFEA30023D71A /* Main.storyboard */; };
 		01B10FD020FEFEA40023D71A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01B10FCF20FEFEA40023D71A /* Assets.xcassets */; };
 		01B10FD320FEFEA40023D71A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01B10FD120FEFEA40023D71A /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		012BA2D4211902830046900D /* VisionLive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionLive.swift; sourceTree = "<group>"; };
-		0197E661210D5BCF00A4C6F3 /* Tech.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Tech.mlmodel; sourceTree = "<group>"; };
+		012357B4217A5CBB00244A5F /* LiveVisionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveVisionView.swift; sourceTree = "<group>"; };
+		012BA2D4211902830046900D /* LiveVision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveVision.swift; sourceTree = "<group>"; };
 		0199D7D4210053AB00596DB8 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
 		01B10FC520FEFEA30023D71A /* VisionLive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VisionLive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01B10FC820FEFEA30023D71A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01B10FCA20FEFEA30023D71A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		01B10FCD20FEFEA30023D71A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		01B10FCF20FEFEA40023D71A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		01B10FD220FEFEA40023D71A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		01B10FD420FEFEA40023D71A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -62,10 +60,9 @@
 			children = (
 				01B10FC820FEFEA30023D71A /* AppDelegate.swift */,
 				0199D7D4210053AB00596DB8 /* Resnet50.mlmodel */,
-				0197E661210D5BCF00A4C6F3 /* Tech.mlmodel */,
 				01B10FCA20FEFEA30023D71A /* ViewController.swift */,
-				012BA2D4211902830046900D /* VisionLive.swift */,
-				01B10FCC20FEFEA30023D71A /* Main.storyboard */,
+				012BA2D4211902830046900D /* LiveVision.swift */,
+				012357B4217A5CBB00244A5F /* LiveVisionView.swift */,
 				01B10FCF20FEFEA40023D71A /* Assets.xcassets */,
 				01B10FD120FEFEA40023D71A /* LaunchScreen.storyboard */,
 				01B10FD420FEFEA40023D71A /* Info.plist */,
@@ -133,7 +130,6 @@
 			files = (
 				01B10FD320FEFEA40023D71A /* LaunchScreen.storyboard in Resources */,
 				01B10FD020FEFEA40023D71A /* Assets.xcassets in Resources */,
-				01B10FCE20FEFEA30023D71A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,25 +140,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0197E662210D5BCF00A4C6F3 /* Tech.mlmodel in Sources */,
 				01B10FCB20FEFEA30023D71A /* ViewController.swift in Sources */,
 				01B10FC920FEFEA30023D71A /* AppDelegate.swift in Sources */,
+				012357B5217A5CBB00244A5F /* LiveVisionView.swift in Sources */,
 				0199D7D5210053AB00596DB8 /* Resnet50.mlmodel in Sources */,
-				012BA2D5211902830046900D /* VisionLive.swift in Sources */,
+				012BA2D5211902830046900D /* LiveVision.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		01B10FCC20FEFEA30023D71A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				01B10FCD20FEFEA30023D71A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		01B10FD120FEFEA40023D71A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
