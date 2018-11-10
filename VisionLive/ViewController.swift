@@ -19,12 +19,11 @@ class ViewController: UIViewController, LiveVisionDelegate {
         super.viewDidLoad()
     
         self.liveVisionView = LiveVisionView(frame: self.view.frame)
+        let previewLayer = self.liveVision.previewLayer(frame: self.view.layer.bounds)
+        self.liveVisionView.layer.addSublayer(previewLayer)
         
         self.liveVision = LiveVision(model: self.resnetModel)
         self.liveVision.delegate = self
-        
-        let previewLayer = self.liveVision.previewLayer(frame: self.view.layer.bounds)
-        self.liveVisionView.layer.addSublayer(previewLayer)
         self.liveVision.startCamera()
         
         self.view.addSubview(self.liveVisionView)
