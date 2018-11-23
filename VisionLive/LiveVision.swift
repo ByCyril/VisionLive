@@ -43,6 +43,7 @@ class LiveVision: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
     public func previewLayer(frame: CGRect) -> AVCaptureVideoPreviewLayer {
         
         let previewLayer = AVCaptureVideoPreviewLayer(session: self.captureSession)
+        previewLayer.videoGravity = .resizeAspectFill
         previewLayer.frame = frame
         
         return previewLayer

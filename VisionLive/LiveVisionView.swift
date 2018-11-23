@@ -34,7 +34,7 @@ class LiveVisionView: UIView {
             label.textAlignment = .center
             label.backgroundColor = UIColor.lightText
             label.textColor = UIColor.black
-            label.font = UIFont(name: "System", size: 17)
+            label.font = UIFont(name: "System", size: 20)
             label.clipsToBounds = true
             label.numberOfLines = 10
             label.layer.cornerRadius = 10

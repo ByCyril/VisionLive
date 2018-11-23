@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, LiveVisionDelegate {
     
-    let resnetModel = Resnet50().model
+    let imageSet = ImageSet().model
     
     var liveVision: LiveVision!
     var liveVisionView: LiveVisionView!
@@ -19,10 +19,11 @@ class ViewController: UIViewController, LiveVisionDelegate {
         super.viewDidLoad()
     
         self.liveVisionView = LiveVisionView(frame: self.view.frame)
-        let previewLayer = self.liveVision.previewLayer(frame: self.view.layer.bounds)
+        self.liveVision = LiveVision(model: self.imageSet)
+
+        let previewLayer = self.liveVision.previewLayer(frame: self.view.frame)
         self.liveVisionView.layer.addSublayer(previewLayer)
         
-        self.liveVision = LiveVision(model: self.resnetModel)
         self.liveVision.delegate = self
         self.liveVision.startCamera()
         
@@ -30,7 +31,7 @@ class ViewController: UIViewController, LiveVisionDelegate {
     }
     
     func getPrediction(prediction: String, confidenceLevel: Double) {
-        self.liveVisionView.display(text: "\(prediction), \(confidenceLevel)")
+        self.liveVisionView.display(text: "Item: \(prediction)\n\nConfidence Level: \(confidenceLevel)%")
     }
 }
 
