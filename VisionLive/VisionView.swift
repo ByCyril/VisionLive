@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LiveVisionView: UIView {
+class VisionView: UIView {
     
     private var resultsLabel: UILabel!
     

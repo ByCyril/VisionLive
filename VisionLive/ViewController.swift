@@ -8,30 +8,44 @@
 
 import UIKit
 
-class ViewController: UIViewController, LiveVisionDelegate {
+class ViewController: UIViewController {
     
     let imageSet = ImageSet().model
     
     var liveVision: LiveVision!
-    var liveVisionView: LiveVisionView!
+    var visionView: VisionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        self.liveVisionView = LiveVisionView(frame: self.view.frame)
+        self.setup()
+       
+    }
+    
+    private func setup() {
+        // Initiate the VisionView and LiveVision classes
+        self.visionView = VisionView(frame: self.view.frame)
         self.liveVision = LiveVision(model: self.imageSet)
-
-        let previewLayer = self.liveVision.previewLayer(frame: self.view.frame)
-        self.liveVisionView.layer.addSublayer(previewLayer)
         
+        // Create a preview layer where the video feed will play
+        let previewLayer = self.liveVision.previewLayer(frame: self.view.frame)
+        // Add the preview layer as a sub layer of the VisionView class
+        self.visionView.layer.addSublayer(previewLayer)
+        
+        // Set the delegate to the super class and start the camera
         self.liveVision.delegate = self
         self.liveVision.startCamera()
         
-        self.view.addSubview(self.liveVisionView)
+        // Ass the VisionView as a subview to the super class
+        self.view.addSubview(self.visionView)
     }
     
-    func getPrediction(prediction: String, confidenceLevel: Double) {
-        self.liveVisionView.display(text: "Item: \(prediction)\n\nConfidence Level: \(confidenceLevel)%")
-    }
+    
 }
 
+extension ViewController: LiveVisionDelegate {
+    // Gets the predicted item and displays it
+    func getPrediction(prediction: String, confidenceLevel: Double) {
+        self.visionView.display(text: "Item: \(prediction)\n\nConfidence Level: \(confidenceLevel)%")
+    }
+}
