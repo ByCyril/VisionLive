@@ -7,45 +7,36 @@
 //
 
 import UIKit
+import AVKit
 
 class ViewController: UIViewController {
     
     let imageSet = ImageSet().model
     
-    var liveVision: LiveVision!
-    var visionView: VisionView!
+    var cameraView: CameraView?
+    var visionRecognizer: VisionRecognizer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        self.setup()
-       
+        
+        cameraView = CameraView(frame: view.bounds)
+        cameraView?.delegate = self
+        cameraView?.captureSession?.startRunning()
+        view = cameraView!
+        
+        visionRecognizer = VisionRecognizer(model: imageSet)
+        visionRecognizer?.delegate = self
     }
-    
-    private func setup() {
-        // Initiate the VisionView and LiveVision classes
-        self.visionView = VisionView(frame: self.view.frame)
-        self.liveVision = LiveVision(model: self.imageSet)
-        
-        // Create a preview layer where the video feed will play
-        let previewLayer = self.liveVision.previewLayer(frame: self.view.frame)
-        // Add the preview layer as a sub layer of the VisionView class
-        self.visionView.layer.addSublayer(previewLayer)
-        
-        // Set the delegate to the super class and start the camera
-        self.liveVision.delegate = self
-        self.liveVision.startCamera()
-        
-        // Ass the VisionView as a subview to the super class
-        self.view.addSubview(self.visionView)
-    }
-    
-    
 }
 
-extension ViewController: LiveVisionDelegate {
-    // Gets the predicted item and displays it
-    func getPrediction(prediction: String, confidenceLevel: Double) {
-        self.visionView.display(text: "Item: \(prediction)\n\nConfidence Level: \(confidenceLevel)%")
+extension ViewController: CameraViewDelegate {
+    func cameraFeed(_ sampleBuffer: CMSampleBuffer) {
+        visionRecognizer?.predict(from: sampleBuffer)
+    }
+}
+
+extension ViewController: VisionRecognizerDelegate {
+    func prediction(_ identifier: String, _ confidenceLevel: Double) {
+        cameraView?.resultsLabel.text = identifier + "\n \(confidenceLevel)"
     }
 }
